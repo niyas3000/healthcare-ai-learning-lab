@@ -1,0 +1,53 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-001",
+        "name": [{"text": "Alex Example"}],
+        "gender": "unknown",
+        "birthDate": "1980-04-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-001",
+        "status": "finished",
+        "class": {"code": "AMB"},
+        "subject": {"reference": "Patient/patient-001"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-001",
+        "clinicalStatus": {"text": "active"},
+        "code": {"text": "Example condition for learning"},
+        "subject": {"reference": "Patient/patient-001"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-001",
+        "status": "final",
+        "code": {"coding": [{"system": "http://loinc.org", "code": "8867-4"}], "text": "Heart rate"},
+        "valueQuantity": {"value": 72, "unit": "beats/minute"},
+        "effectiveDateTime": "2026-01-10T09:00:00Z",
+        "subject": {"reference": "Patient/patient-001"}
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report-001",
+        "status": "final",
+        "code": {"text": "Example diagnostic report"},
+        "subject": {"reference": "Patient/patient-001"}
+      }
+    }
+  ]
+}

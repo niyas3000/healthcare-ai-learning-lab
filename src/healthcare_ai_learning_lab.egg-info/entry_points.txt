@@ -1,2 +1,0 @@
-[console_scripts]
-healthcare-ai-lab = healthcare_ai_lab.cli:main
